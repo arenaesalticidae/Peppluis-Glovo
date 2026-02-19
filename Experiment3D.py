@@ -75,6 +75,21 @@ def B(j,k):
     t4.goto(j,k+5)
     t4.goto(j+15,k+17.5)
     t4.goto(j,k+20)
+
+def U(j,k):
+    t4.penup()
+    t4.goto(j,k-5)
+    t4.pendown()
+    t4.goto(j,k+40)
+    t4.goto(j-10,k+40)
+    t4.goto(j-10,k+15)
+    t4.goto(j-20,k+15)
+    t4.goto(j-20,k+40)
+    t4.goto(j-30,k+40)
+    t4.goto(j-30,k-5)
+    t4.goto(j,k-5)
+    
+    
 def Sobre(h,b,j,k):#Función sobre
     t4.penup()
     goto = t4.goto
@@ -110,7 +125,7 @@ def Glovo(x,y):
         t3.pendown()
         goto(j+(h/2),k+(b/2))#DerArb
         goto(j,k-(b/2))#CentAbj
-      u  goto(j-(h/2),k+(b/2))#IzqArb
+        goto(j-(h/2),k+(b/2))#IzqArb
         goto(j,k-(b/2))#CentAbj
         t3.penup()
     goto(x-15,y)
@@ -250,7 +265,8 @@ def main():
      
     ]
     A(0,35)
-    B(35,35)
+    B(70,35)
+    U(55,35)
     for i in range (8):
         for x in range (2):
             Confetti(-250+i*70*x,300,color[i])
