@@ -63,6 +63,7 @@ def B(j,k):
     t4.pendown()
     t4.goto(j+20,k-5)#exterior
     t4.goto(j+20,k+20)
+    t4.goto(j+20,k+20)
     t4.goto(j+10,k+25)
     t4.goto(j+20,k+30)
     t4.goto(j+20,k+40)
@@ -82,6 +83,52 @@ def B(j,k):
     t4.goto(j,k+5)
     t4.goto(j+15,k+17.5)
     t4.goto(j,k+20)
+def U(j,k):
+    t4.penup()
+    t4.goto(j,k-5)
+    t4.pendown()
+    t4.goto(j,k+40)
+    t4.goto(j-10,k+40)
+    t4.goto(j-10,k+15)
+    t4.goto(j-20,k+15)
+    t4.goto(j-20,k+40)
+    t4.goto(j-30,k+40)
+    t4.goto(j-30,k-5)
+    t4.goto(j,k-5)
+
+def Y(j,k):
+    t4.hideturtle()
+    t4.penup()
+    t4.goto(j+5,k-5)
+    t4.pendown()
+    t4.goto(j+5,k+15)
+    t4.goto(j+20,k+40)
+    t4.goto(j+10,k+40)
+    t4.goto(j-5,k+20)
+    t4.goto(j-20,k+40)
+    t4.goto(j-30,k+40)
+    t4.goto(j-15,k+15)
+    t4.goto(j-15,k-5)
+    t4.goto(j,k-5)
+    t4.goto(j+5,k-5)
+    
+def T(j,k):
+    t4.hideturtle()
+    t4.penup()
+    t4.goto(j,k)
+    t4.pendown()
+    t4.goto(j+5,k-5)
+    t4.goto(j+5,k+30)
+    t4.goto(j+15,k+30)
+    t4.goto(j+15,k+40)
+    t4.goto(j-5,k+40)
+    t4.goto(j,k+40)
+    t4.goto(j-15,k+40)
+    t4.goto(j-15,k+30)
+    t4.goto(j-5,k+30)
+    t4.goto(j-5,k-5)
+    t4.goto(j+5,k-5)
+    
 def Sobre(h,b,j,k):#Función sobre
     t4.penup()
     goto = t4.goto
@@ -179,8 +226,12 @@ def draw_frame(t, points, edges):#Funcion para el dibujo del cubo/regalo
     turtle.update()
 
 def main():#Lo que acontece en la escena principal
-    A(0,35)
-    B(35,35)
+    A(-150,35)
+    U(-95,35)
+    B(-80,35)
+    A(-35,35)
+    Y(35,35)
+    T(85,35)
     for i in range (8):#Loop para la decoración repetida
         for x in range (2):
             Confetti(-240+i*70*x,300,color[i])#Usando los dos loops puedo usar la función que cree varias veces en diferentes posiciones y multiplicandolo obtengo un "offset"
@@ -197,11 +248,11 @@ def main():#Lo que acontece en la escena principal
     #****************************************************************
 #     SEPARACIÓN CODIGO 3D Y 2D
     #****************************************************************
-    screen = turtle.Screen()#Características de la pantalla
+    screen = turtle.Screen()#Características de la tortuga del regalo
     screen.tracer(0)
+   
     screen.bgcolor("black")
-    
-    t = turtle.Turtle()#Características de la tortuga del regalo
+    t = turtle.Turtle()
     t.speed(0)
     t.color("green")#Cubo verde
     points = [#Definición de todos los puntos del cubo
@@ -282,7 +333,6 @@ if __name__ == "__main__":
    
 
     main()
-
 
 
 
